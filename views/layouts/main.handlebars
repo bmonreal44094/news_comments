@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+		<title>Mongo Scrapper</title>
+		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/spacelab/bootstrap.min.css">
+		<style type="text/css">
+
+	</style>
+	</head>
+
+	<body>
+		<div class="bs-docs-section clearfix">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h1 id="navbars">Mongo Scrapper</h1>
+					</div>
+					<div class="bs-component">
+						<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+							<div class="collapse navbar-collapse" id="navbarColor01" style="margin-left: 10%;">
+								<ul class="navbar-nav mr-auto">
+									<li class="nav-item">
+										<a class="nav-link" href="/">Home</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/scrape">Scrape New Articles</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/saved">My Saved Articles</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h1>Articles</h1>
+				<div class="row">
+				  	<div class="col-md-12">
+				    	<div class="bs-component">
+				     
+							{{{ body }}}
+
+		   				</div>
+		  			</div>
+				</div>
+		</div>
+
+		<div id="myModal" class="modal" style=" position: absolute; top: 10%; right: 10%; left: 10%">
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <h2>Notes</h2>
+		    <p>Enter a note</p>
+		    <div id="notes"></div>
+		  </div>
+		</div>
+	</body>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="../app.js"></script>
+
+</html>

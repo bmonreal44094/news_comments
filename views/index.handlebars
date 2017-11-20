@@ -1,0 +1,11 @@
+ <ul>   
+    {{#each data}}
+      <li class="list-group-item">
+        <h4>{{title}}</h4>
+        <h6>{{blurb}}</h6>
+        <a href="http://foxnews.com{{link}}">foxnews.com{{link}}</a>
+        <button id="{{id}}" class="btn btn-info btn-article" style="float: right;">Article Notes</button>
+        <button id="{{id}}" class="btn btn-info btn-saved" style="float: right;">Delete From Saved</button>
+      </li>          
+    {{/each}}
+</ul>
