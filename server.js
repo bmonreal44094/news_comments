@@ -5,9 +5,11 @@ const express = require("express"),
       axios = require("axios"),
       cheerio = require("cheerio"),
       db = require("./models"),
-      PORT = 8080,
+      // PORT = 8080,
+      PORT = process.env.PORT || 8080
       app = express(),
       exphbs = require("express-handlebars");
+      MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_pczflrt8:fm6rkphqb586ktcu458n6nufis@ds113606.mlab.com:13606/heroku_pczflrt8";
 
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
@@ -17,9 +19,17 @@ app.use(express.static("views"));
 app.use(express.static("public"));
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/news-comments", {
-  useMongoClient: true
+// mongoose.connect("mongodb://localhost/news-comments", {
+//   useMongoClient: true
+// });
+mongoose.connect(MONGODB_URI,
+{
+    useMongoClient: true
 });
+
+
+[12:16] 
+got things working for me
 
 app.get('/', function (req, res) {
   res.redirect("articles");
