@@ -23,7 +23,7 @@ mongoose.connect("mongodb://localhost/news-comments", {
 
 app.get('/', function (req, res) {
   res.redirect("articles");
-  console.log("Hello World Console");
+  // console.log("Hello World Console");
 });
 
 app.get("/scrape", function(req, res) {
@@ -111,8 +111,11 @@ app.get("/saved", function(req, res) {
 });
 
 app.post("/saved/:id", function(req, res) {
-  console.log(req.params.id);
-  db.Article.update({_id:req.params.id}, {$set: {saved:false}})
+  console.log("ID of request: " +  req.params.id);
+  // let ID = "ObjectId(\"" + req.params.id + "\")";
+  let ID = mongoose.Types.ObjectId(req.params.id);
+  console.log(ID);
+  db.Article.update({_id:ID}, {$set: {saved:"false"}})
 });
 
 app.listen(PORT, function() {
