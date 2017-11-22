@@ -27,10 +27,6 @@ mongoose.connect(MONGODB_URI,
     useMongoClient: true
 });
 
-
-[12:16] 
-got things working for me
-
 app.get('/', function (req, res) {
   res.redirect("articles");
   // console.log("Hello World Console");
